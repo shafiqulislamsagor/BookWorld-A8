@@ -6,8 +6,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Home'; 
-import Cards from './components/Cards';
 import Error from './components/Error';
+import MainHome from './page/MainHome';
+import CardPage from './page/CardPage';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,14 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Cards/>,
+        element:<MainHome/>,
+        errorElement:<Error/>,
         loader: ()=> fetch('/data.json'),
+      },
+      {
+        path: '/card/:id',
+        element:<CardPage/>,
+        loader: ()=> fetch(`/data.json`),
         errorElement:<Error/>
       }
     ],

@@ -9,7 +9,7 @@ const SigleCard = ({Card}) => {
     const {author,image,bookId,bookName,publisher,rating,review,tags,totalPages,yearOfPublishing,category} = Card;
     const tagsAll = tags;
     return (
-        <Link>
+        <Link  to={`/card/${bookId}`}>
         <div className="border rounded-2xl p-6">
             <div className="h-56 py-8 w-full"><img className="h-full mx-auto" src={image} alt="" /></div>
             <div className="flex gap-4">
