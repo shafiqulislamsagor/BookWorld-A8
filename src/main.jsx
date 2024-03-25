@@ -5,12 +5,22 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './Home';
+import Home from './Home'; 
+import Cards from './components/Cards';
+import Error from './components/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home/>,
+    children:[
+      {
+        path:'/',
+        element:<Cards/>,
+        loader: ()=> fetch('/data.json'),
+        errorElement:<Error/>
+      }
+    ],
   },
 ]);
 
