@@ -1,18 +1,23 @@
 import { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
+import SigleTag from '../components/SigleTag';
+import Loaders from '../components/Loaders';
 
 const CardPage = () => {
-    const {id} = useParams();
+    const { id } = useParams();
     // console.log(id);
     const cardData = useLoaderData();
+    
     // console.log(cardData);
-    const [currentData,setCurrentData] = useState({})
-    useEffect(()=>{
-        const current = cardData.find(data=> data.bookId == id);
+    const [currentData, setCurrentData] = useState({})
+    useEffect(() => {
+        const current = cardData.find(data => data.bookId == id);
         setCurrentData(current)
-    },[cardData,id])
-    const {author,image,bookName,publisher,rating,review,tags,totalPages,yearOfPublishing,category} = currentData;
-    console.log(tags);
+    }, [cardData, id])
+    const { author, image, bookName, publisher, rating, review, tags, totalPages, yearOfPublishing, category } = currentData;
+    // console.log(tags);
+    const loaderPoint = useNavigation();
+    if(loaderPoint.state==="loading") return <Loaders/>
     return (
         <div className='flex gap-11 mt-14 w-[82%] mx-auto'>
             <div className='w-[45%] px-20 py-16 bg-base-200 rounded-3xl'><img className='w-full' src={image} alt="" /></div>
@@ -23,7 +28,9 @@ const CardPage = () => {
                 <h4>{category}</h4>
                 <div className='border border-dashed'></div>
                 <p><span className="font-bold">Review:</span> {review}</p>
-                <h6>Tag: </h6>
+                <h6 className='flex gap-4'>Tag: <div className='flex gap-4'>
+                    {tags?.map((tag, idx) => <SigleTag tag={tag} key={idx}></SigleTag>)}
+                </div></h6>
                 <div className='border border-dashed'></div>
                 <div className='flex gap-5 items-center'>
                     <div>
@@ -32,7 +39,7 @@ const CardPage = () => {
                         <h1>Year of Publishing:</h1>
                         <h1>Rating:</h1>
                     </div>
-                    <div  className='text-left'>
+                    <div className='text-left'>
                         <h1>{totalPages}</h1>
                         <h1>{publisher}</h1>
                         <h1>{yearOfPublishing}</h1>
