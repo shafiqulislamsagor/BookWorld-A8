@@ -6,6 +6,7 @@ import CardPage from "../page/CardPage";
 import ListBook from "../page/ListBook";
 import Read from './../page/Read';
 import Wish from "../page/Wish";
+import Charts from "../page/Charts";
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,12 @@ export const router = createBrowserRouter([
                 loader: () => fetch(`/data.json`),
                 errorElement: <Error />
             },
+            {
+                path: '/page',
+                element: <Charts/>,
+                errorElement: <Error/>
+            }
+            ,
             {
                 path: '/bookList',
                 element: <ListBook />,

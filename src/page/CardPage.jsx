@@ -2,10 +2,25 @@ import { useEffect, useState } from 'react';
 import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import SigleTag from '../components/SigleTag';
 import Loaders from '../components/Loaders';
+import { getStore } from '../components/store';
+import { toast } from 'react-hot-toast';
 
 const CardPage = () => {
     const { id } = useParams();
     // console.log(id);
+
+    const ready = (cardpage) =>{
+        let stored = getStore()
+        const findCard = stored.find(card => card.bookId === cardpage.bookId)
+        if(findCard){
+            return toast.error('existed!! Already Read')
+        }
+        stored = [...stored,cardpage];
+        localStorage.setItem('readCard',JSON.stringify(stored))
+        toast.success('Successfully!! Read added')
+
+    }
+
     const cardData = useLoaderData();
     
     // console.log(cardData);
@@ -47,7 +62,7 @@ const CardPage = () => {
                     </div>
                 </div>
                 <div className='flex gap-5'>
-                    <button className='btn btn-outline'>Read</button>
+                    <button onClick={()=>ready(currentData)} className='btn btn-outline'>Read</button>
                     <button className='btn btn-info'>Wishlist</button>
                 </div>
             </div>
