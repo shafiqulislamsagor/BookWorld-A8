@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import SigleTag from '../components/SigleTag';
 import Loaders from '../components/Loaders';
-import { getStore } from '../components/store';
+import { getStore, getWish } from '../components/store';
 import { toast } from 'react-hot-toast';
 
 const CardPage = () => {
@@ -18,6 +18,25 @@ const CardPage = () => {
         stored = [...stored,cardpage];
         localStorage.setItem('readCard',JSON.stringify(stored))
         toast.success('Successfully!! Read added')
+
+    }
+    const wishFun = (cardsdata) =>{
+        let stored = getStore();
+        let wishStored = getWish();
+        const findCard = stored.find(card => card.bookId === cardsdata.bookId);
+        const findWishCard = wishStored.find(card => card.bookId === cardsdata.bookId);
+        if(findCard){
+            return toast.error('already read list added')
+        }
+        else{
+            if(findWishCard){
+                return toast.error('already wish list adedd')
+            }
+            wishStored = [...wishStored,cardsdata];
+            localStorage.setItem('wishCard',JSON.stringify(wishStored))
+            toast.success('Successfully!! wish added')
+        }
+
 
     }
 
@@ -63,7 +82,7 @@ const CardPage = () => {
                 </div>
                 <div className='flex gap-5'>
                     <button onClick={()=>ready(currentData)} className='btn btn-outline'>Read</button>
-                    <button className='btn btn-info'>Wishlist</button>
+                    <button onClick={()=>wishFun(currentData)} className='btn btn-info'>Wishlist</button>
                 </div>
             </div>
         </div>

@@ -6,4 +6,12 @@ export const getStore = () =>{
     }
     return readCard;
 }
+export const getWish = () =>{
+    let wishCard = [];
+    const localStore = localStorage.getItem('wishCard')
+    if(localStore){
+        wishCard = JSON.parse(localStore)
+    }
+    return wishCard;
+}
 
