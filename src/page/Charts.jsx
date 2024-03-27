@@ -77,9 +77,9 @@ const Charts = () => {
     };
 
     return (
-        <div >
+        <div className='w-[85%] mx-auto'>
             <BarChart
-                width={1000}
+                width={375}
                 height={300}
                 data={dataMap}
                 margin={{

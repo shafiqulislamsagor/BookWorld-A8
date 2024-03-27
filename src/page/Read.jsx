@@ -6,7 +6,7 @@ const Read = () => {
     let readCard = ActionClick() || getStore()
     // console.log(readCard);
     return (
-        <div>
+        <div className="mb-7 mt-3">
             {
                 readCard.map(array=> <ReadCard key={array.bookId} card={array}/>)
             }
