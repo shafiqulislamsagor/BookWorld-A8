@@ -1,10 +1,8 @@
 import ReadCard from "../components/ReadCard";
 import { getStore } from "../components/store";
-import { ActionClick } from './Sort';
 
 const Read = () => {
-    let readCard = ActionClick() || getStore()
-    // console.log(readCard);
+    let readCard = getStore()
     return (
         <div className="mb-7 mt-3">
             {
