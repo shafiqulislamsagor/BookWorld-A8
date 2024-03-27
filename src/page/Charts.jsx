@@ -1,24 +1,67 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 import { getStore } from '../components/store';
 
 
 const Charts = () => {
     const ReadStored = getStore();
-    const [newObject, setNewObject] = useState(null)
-    useEffect(() => {
-        let fack = [];
-        ReadStored.map((datas) => {
-            let d = { name: datas.bookName, uv: datas.totalPages, pv: 1398, amt: 2210 }
-            fack = [...fack, d]
-        })
-        setNewObject(fack)
-    }, []);
-    const data = [...newObject];
-    console.log(data);
+    // console.log(ReadStored);
+    const dataMap = ReadStored.map(e=>{
+        // console.log(e);
+        return {
+            name: e.bookName,
+            uv: e.totalPages,
+            pv: 2400,
+            amt: 2400
+        }
+    })
+    const data = [
+        {
+            name: 'sagor',
+            uv: 3000,
+            pv: 2400,
+            amt: 2400
+        },
+        {
+            name: 'Page B',
+            uv: 3000,
+            pv: 1398,
+            amt: 2210,
+        },
+        {
+            name: 'Page C',
+            uv: 2000,
+            pv: 9800,
+            amt: 2290,
+        },
+        {
+            name: 'Page D',
+            uv: 2780,
+            pv: 3908,
+            amt: 2000,
+        },
+        {
+            name: 'Page E',
+            uv: 1890,
+            pv: 4800,
+            amt: 2181,
+        },
+        {
+            name: 'Page F',
+            uv: 2390,
+            pv: 3800,
+            amt: 2500,
+        },
+        {
+            name: 'Page G',
+            uv: 3490,
+            pv: 4300,
+            amt: 2100,
+        },
+    ];
+    // console.log(dataMap);
 
-    const colors = ['#FF7ED4', '#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#5755FE', '#FF71CD'];
+    const colors = ['#FF7ED4','#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#5755FE', '#FF71CD'];
 
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -38,7 +81,7 @@ const Charts = () => {
             <BarChart
                 width={1000}
                 height={300}
-                data={newObject}
+                data={dataMap}
                 margin={{
                     top: 20,
                     right: 30,
