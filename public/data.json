@@ -1,7 +1,7 @@
 [
     {
         "bookId": 1,
-        "bookName": "The Hunger Games",
+        "bookName": "The Hunger",
         "author": "Suzanne Collins",
         "image": "https://i.ibb.co/x3SSRp7/book1.png",
         "review": "Suzanne Collins' 'The Hunger Games' is a riveting dystopian novel set in a post-apocalyptic world where the Capitol forces children to fight to the death in an annual event called the Hunger Games. Through the courageous protagonist Katniss Everdeen, Collins explores themes of survival, sacrifice, and rebellion against tyranny. 'The Hunger Games' is a gripping tale that captivates readers with its action-packed plot and thought-provoking commentary on society and power.",
@@ -17,7 +17,7 @@
     },
     {
         "bookId": 2,
-        "bookName": "Harry Potter ",
+        "bookName": "Harry Potter",
         "author": "J.K. Rowling",
         "image": "https://i.ibb.co/txn9GwM/book2.png",
         "review": "J.K. Rowling's 'Harry Potter and the Sorcerer's Stone' is a magical journey into the world of Hogwarts School of Witchcraft and Wizardry. Through the eyes of the young wizard Harry Potter, Rowling creates a richly imagined universe filled with spells, potions, and mythical creatures. As Harry uncovers the truth about his past and battles the dark wizard Voldemort, readers are drawn into a thrilling adventure of courage and friendship. 'Harry Potter and the Sorcerer's Stone' is a timeless classic that continues to enchant audiences of all ages.",
@@ -33,7 +33,7 @@
     },
     {
         "bookId": 3,
-        "bookName": "The Catcher in the Rye",
+        "bookName": "The Catcher Rye",
         "author": "J.D. Salinger",
         "image": "https://i.ibb.co/Lk5r4BC/book3.png",
         "review": "J.D. Salinger's 'The Catcher in the Rye' is a timeless coming-of-age novel that follows the disillusioned teenager Holden Caulfield as he navigates the challenges of adolescence in 1950s America. Through Holden's cynical voice, Salinger explores themes of alienation, identity, and the loss of innocence. 'The Catcher in the Rye' remains a cultural landmark, resonating with readers for its authenticity and insight into the struggles of youth.",
@@ -65,7 +65,7 @@
     },
     {
         "bookId": 5,
-        "bookName": "To Kill a Mockingbird",
+        "bookName": "To Kill Monstar",
         "author": "Harper Lee",
         "image": "https://i.ibb.co/dsvJkwc/book5.png",
         "review": "Harper Lee's 'To Kill a Mockingbird' is a powerful exploration of racial injustice and moral growth in the American South. Through the eyes of the young Scout Finch, Lee confronts issues of prejudice and empathy as her father, Atticus Finch, defends an innocent Black man accused of rape. 'To Kill a Mockingbird' is a timeless classic that challenges readers to confront the complexities of society and the importance of standing up for what is right.",

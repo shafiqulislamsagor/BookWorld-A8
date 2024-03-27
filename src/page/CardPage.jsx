@@ -53,8 +53,8 @@ const CardPage = () => {
     const loaderPoint = useNavigation();
     if(loaderPoint.state==="loading") return <Loaders/>
     return (
-        <div className='flex gap-11 mt-14 mb-12 w-[82%] mx-auto'>
-            <div className='w-[45%] px-20 py-16 bg-base-200 rounded-3xl'><img className='w-full' src={image} alt="" /></div>
+        <div className='flex flex-col lg:flex-row gap-11 mt-5 lg:mt-14 mb-12 w-[82%] mx-auto'>
+            <div className='lg:w-[45%] flex flex-col justify-center px-20 py-16 bg-base-200 rounded-3xl'><img className='w-full' src={image} alt="" /></div>
             <div className='flex-1'>
                 <h1 className='displayed text-4xl font-bold blacked'>{bookName}</h1>
                 <h2 className='work text-xl font-medium blacked my-4'>By: {author}</h2>
@@ -62,7 +62,7 @@ const CardPage = () => {
                 <h4 className='work text-xl font-medium blacked my-4'>{category}</h4>
                 <div className='border border-dashed'></div>
                 <p className='work text-base font-normal mt-5 mb-10'><span className="font-bold">Review:</span> {review}</p>
-                <h6 className='flex gap-4'>Tag: <div className='flex gap-4'>
+                <h6 className='flex gap-4 items-center'><span className='font-bold work'>Tag: </span><div className='flex gap-4'>
                     {tags?.map((tag, idx) => <SigleTag tag={tag} key={idx}></SigleTag>)}
                 </div></h6>
                 <div className='border border-dashed my-5'></div>

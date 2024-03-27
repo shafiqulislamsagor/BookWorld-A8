@@ -9,7 +9,7 @@ const Wish = () => {
     if(navigation.state==='loading') return <Loaders/>
     return (
         
-        <div>
+        <div className="mb-5">
             {
                 wishCard.map(array=> <ReadCard key={array.bookId} card={array}/>)
             }
