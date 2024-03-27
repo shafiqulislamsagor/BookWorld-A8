@@ -81,7 +81,7 @@ const Charts = () => {
             <div className='lg:hidden'>
                 <BarChart
                     className="w-full mx-auto mt-10"
-                    width={375}
+                    width={365}
                     height={400}
                     data={dataMap}
                     margin={{
