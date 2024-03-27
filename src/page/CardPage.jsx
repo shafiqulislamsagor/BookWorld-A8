@@ -53,36 +53,36 @@ const CardPage = () => {
     const loaderPoint = useNavigation();
     if(loaderPoint.state==="loading") return <Loaders/>
     return (
-        <div className='flex gap-11 mt-14 w-[82%] mx-auto'>
+        <div className='flex gap-11 mt-14 mb-12 w-[82%] mx-auto'>
             <div className='w-[45%] px-20 py-16 bg-base-200 rounded-3xl'><img className='w-full' src={image} alt="" /></div>
             <div className='flex-1'>
-                <h1>{bookName}</h1>
-                <h2>By: {author}</h2>
+                <h1 className='displayed text-4xl font-bold blacked'>{bookName}</h1>
+                <h2 className='work text-xl font-medium blacked my-4'>By: {author}</h2>
                 <div className='border border-dashed'></div>
-                <h4>{category}</h4>
+                <h4 className='work text-xl font-medium blacked my-4'>{category}</h4>
                 <div className='border border-dashed'></div>
-                <p><span className="font-bold">Review:</span> {review}</p>
+                <p className='work text-base font-normal mt-5 mb-10'><span className="font-bold">Review:</span> {review}</p>
                 <h6 className='flex gap-4'>Tag: <div className='flex gap-4'>
                     {tags?.map((tag, idx) => <SigleTag tag={tag} key={idx}></SigleTag>)}
                 </div></h6>
-                <div className='border border-dashed'></div>
-                <div className='flex gap-5 items-center'>
-                    <div>
+                <div className='border border-dashed my-5'></div>
+                <div className='flex gap-5 items-center blacked'>
+                    <div className='work space-y-3'>
                         <h1>Number of Pages:</h1>
                         <h1>Publisher:</h1>
                         <h1>Year of Publishing:</h1>
                         <h1>Rating:</h1>
                     </div>
-                    <div className='text-left'>
+                    <div className='text-left work font-semibold space-y-3'>
                         <h1>{totalPages}</h1>
                         <h1>{publisher}</h1>
                         <h1>{yearOfPublishing}</h1>
                         <h1>{rating}</h1>
                     </div>
                 </div>
-                <div className='flex gap-5'>
-                    <button onClick={()=>ready(currentData)} className='btn btn-outline'>Read</button>
-                    <button onClick={()=>wishFun(currentData)} className='btn btn-info'>Wishlist</button>
+                <div className='flex gap-5 mt-8'>
+                    <button onClick={()=>ready(currentData)} className='btn btn-outline work text-base font-semibold blacked'>Read</button>
+                    <button onClick={()=>wishFun(currentData)} className='btn btn-info work text-base font-semibold text-white'>Wishlist</button>
                 </div>
             </div>
         </div>

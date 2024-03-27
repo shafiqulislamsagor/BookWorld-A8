@@ -11,20 +11,20 @@ const SigleCard = ({Card}) => {
     return (
         <Link  to={`/card/${bookId}`}>
         <div className="border rounded-2xl p-6">
-            <div className="h-56 py-8 w-full"><img className="h-full mx-auto" src={image} alt="" /></div>
+            <div className="h-56 mb-6 py-8 w-full bg-[#F3F3F3] rounded-2xl"><img className="h-full mx-auto" src={image} alt="" /></div>
             <div className="flex gap-4">
                 {
                     tagsAll.map((tag,idx) => <SigleTag tag={tag} key={idx}/>)
                 }
             </div>
-            <h2>{bookName}</h2>
-            <p>By: {author}</p>
-            <div className="border border-dashed"></div>
+            <h2 className="displayed mt-4 mb-3 text-2xl font-bold leading-[32px] blacked">{bookName}</h2>
+            <p className="work text-base font-medium blacked">By: {author}</p>
+            <div className="border border-dashed my-5"></div>
             <div className="flex justify-between">
-                <h2>{category}</h2>
-                <div className="flex gap-2 items-center">
-                    <h2>{rating}</h2>
-                    <IoMdStarOutline />
+                <h2 className="work text-base font-medium blacked">{category}</h2>
+                <div className="flex gap-2 items-center work  font-medium blacked">
+                    <h2 className="">{rating}</h2>
+                    <IoMdStarOutline/>
                 </div>
             </div>
         </div>
